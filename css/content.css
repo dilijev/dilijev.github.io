@@ -1,0 +1,43 @@
+body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", "Lucida Sans", sans-serif; 
+   font-weight: 300;
+}
+
+div.description {
+  font-size: 10pt;
+}
+
+div.description a {
+  font-weight: bold;
+  /*color: #97AAC6;*/
+  color: #88A4CC;
+}
+
+div.description a:hover {
+  color: #ADBED8;
+}
+
+div.text {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 300;
+  font-size: 21px;
+  /* font-size: 14pt; */
+}
+
+@media (max-width: 767px) {
+  div.text {
+    font-size: 12pt;
+  }
+}
+
+p + p {
+  margin-top: 16px;
+}
+
+.box {
+  background-color: #f8f8f8;
+  border: 1px solid #e6e6e6;
+  color: #000;
+  border-radius: 4px;
+  padding: 6px;
+}

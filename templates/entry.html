@@ -1,0 +1,23 @@
+<div class="blog-entry">
+  <div class="blog-header">
+    <div class="blog-header-border">
+      <div class="blog-header-info">
+        <div class="blog-header-title">
+          <a href="{{ link }}">{{ title }}</a>
+        </div>
+        <div class="blog-header-date">
+          Published to <strong><a href="{{ blog.url }}">{{ blog.name }}</a></strong> on <strong>{{ publishedDate }}</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="blog-content">
+    <div>
+      {{{ content }}}
+    </div>
+    <hr />
+    <div class="text-muted">
+      <em><a href="{{ link }}#comments" target="_blank">Comments</a> | <strong><a href="{{ link }}" target="_blank">Original Post</a></strong> | go to <a href="{{ blog.url }}" target="_blank">{{ blog.name }}</a></em>
+    </div>
+  </div>
+</div>

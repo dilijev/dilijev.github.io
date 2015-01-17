@@ -1,0 +1,91 @@
+.parallax {
+  background-color: #4C70A5;
+  box-shadow: inset 0 0 60px 8px rgba(0,0,0,0.8);
+  background-attachment: fixed;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
+.parallax .container {
+  padding: 50px 18px;
+}
+
+.navbar + .content .parallax {
+  padding-bottom: 10px;
+}
+
+.parallax .img-thumbnail {
+  padding: 6px;
+  background-color: rgba(100%, 100%, 100%, 0.35);
+  border: 0px solid rgba(87%, 87%, 87%, 0.3);
+}
+
+.parallax div.box {
+  background-color: rgba(100%, 100%, 100%, 0.5);
+  color: #000;
+  border: 0px;
+  border-radius: 4px;
+  padding: 6px;
+}
+
+.parallax div.box div + div {
+  margin-top: 6px;
+}
+
+.parallax div.box p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.parallax div.box p + p {
+  margin-top: 16px;
+}
+
+.parallax .box + .box {
+  margin-top: 12px;
+}
+
+.parallax .quote {
+  color: #FFF !important;
+  font-size: 60pt !important;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  text-shadow: 6px 4px 6px rgba(0%, 0%, 0%, .8);
+}
+
+@media (max-width: 767px) {
+  .parallax .quote {
+    font-size: 36pt !important;
+  }
+}
+
+.parallax .center {
+  text-align: center;
+  position: relative;
+
+  /* center */
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header-parallax {
+  margin-top: 50px;
+  background-image: url("/img/rainy.jpg");
+}
+
+#header-parallax .container {
+  padding-top: 0px;
+}
+
+#music-parallax {
+  background-image: url("/img/orch.jpg");
+  min-height: 400px;
+}
+
+
+@media (max-width: 767px) {
+  #music-parallax {
+    min-height: 200px;
+  }
+}

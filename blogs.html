@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <link rel="icon"
+      type="image/ico"
+      href="/favicon.ico" />
+
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/sticky-footer-navbar.css" />
+    <link rel="stylesheet" href="/css/content.css" />
+    <link rel="stylesheet" href="/css/carousel.css" />
+    <link rel="stylesheet" href="/css/parallax.css" />
+    <link rel="stylesheet" href="/css/blogs.css" />
+
+    <script src="/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="/jquery/jquery.stellar.min.js" type="text/javascript"></script>
+    <script src="/handlebars/handlebars.js" type="text/javascript"></script>
+
+<title>
+Doug Ilijev | Blogs</title>
+
+<script type="text/javascript">
+//<![CDATA[
+  $(document).ready(function() {
+    $(".nav.navbar-nav > li#Blogs").addClass("active");
+  });
+//]]>
+</script>
+
+  </head>
+  <body>
+    <div id="wrap">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/"><strong>Doug Ilijev</strong></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li id="Home"><a href="/">Home</a></li>
+            <li id="Resume"><a href="/resume.pdf" target="_blank">Resume</a></li>
+            <li id="Blogs"><a href="/blogs.html">Blogs</a></li>
+            <!--
+            <li id="Resume"><a href="/resume.html">Resume</a></li>
+            <li id="Projects"><a href="/projects.html">Projects</a></li>
+            <li id="Contact"><a href="/contact.html">Contact</a></li>
+            -->
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="content">
+    <!-- page-specific content here -->
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-8">
+
+<!-- one cell per blog entry -->
+<!--
+<div class="entry">
+  <div class="header">
+    <div class="row">
+      <!--
+      <div class="col-sm-2">
+        <img class="img-thumbnail img-circle img-responsive blog-image" src="/img/blog/pensive.jpg" />
+      </div>
+      ->
+      <div class="col-sm-12">
+        <div class="border">
+          <div class="header-info">
+            <!-- 
+            <div class="header-blog">
+              <a>Blog Name</a>
+            </div>
+            ->
+            <div class="header-title">
+              <a>Title of Blog Post</a>
+            </div>
+            <div class="header-date">
+              Published: August 26th, 2013 10:00 PM, to <a>Blog Name</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    This is content of a blog post.
+  </div>
+</div>
+-->
+    
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load("feeds", "1");
+
+  function initialize() {
+    var feed = new google.feeds.Feed("http://dilijev.blogspot.com/feeds/posts/default");
+    feed.setNumEntries(5);
+    
+    feed.load(function(result) {
+      if (!result.error) {
+        $.get("/templates/entry.html", function(data) {
+          var template = Handlebars.compile(data);
+          var content = '';  
+          
+          var blog = {
+            name: "Living Portrait",
+            url: "http://dilijev.blogspot.com/"
+          };
+          
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            entry.blog = blog;
+            content += template(entry);
+          }
+          
+          var outputFeed = $('#feed');
+          outputFeed.html(content);
+        });
+      }
+    });
+  }
+  
+  google.setOnLoadCallback(initialize);
+</script>
+
+<div id="feed"></div>
+    
+    </div>
+    <div class="col-md-4">
+    
+    <div class="box">
+      <a class="twitter-timeline" href="https://twitter.com/DougIlijev" data-widget-id="372139267113242625" data-chrome="transparent" data-tweet-limit="5">Tweets by @DougIlijev</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+      
+    </div>
+  </div>
+
+</div>
+
+<!--
+<script type="text/javascript">
+$(window).resize(function(){
+  $('.entry').each(function(index, value) {
+    // $(value).css({height: 0px});
+  
+    var image = $('.blog-image', value);
+    var header_info = $('.header-info', value);
+    
+    imageHeight = image.height();
+    
+    header_info.css({
+      'min-height': imageHeight,
+      height: 'auto !important'
+    });
+    
+  /*
+    var border = $('.border', value);
+    var header = $('.header', value);
+    
+    var headerHeight = header.height();
+    console.log(headerHeight);
+    
+    border.css({
+      height: headerHeight
+    });
+    
+    var borderHeight = border.height();
+    
+    header_info.css({
+      height: borderHeight
+    });
+    */
+  });
+});
+
+// To initially run the function:
+$(window).resize();
+</script>
+-->
+
+    <!-- end content -->
+    </div><!-- /.content-->
+
+    </div> <!-- /.wrap -->
+
+    <div id="footer">
+      <div class="container hidden-xs" id="footer-content">
+        <div class="text-muted credit">
+          <a href="http://doug.ilijev.com">doug.ilijev.com</a> &nbsp; beta
+          &nbsp; | &nbsp; 
+          Copyright &copy; 2013 &nbsp; <a href="/contact.html">Doug Ilijev</a>
+          &nbsp; | &nbsp;
+          <a href="/credits.html">Credits...</a>
+          &nbsp; | &nbsp;
+          <a href="http://getbootstrap.com/" target="_blank">Bootstrap 3.0.0</a>
+          &nbsp; | &nbsp;
+          <a href="http://jquery.com/" target="_blank">jQuery 2.0.3</a>
+          &nbsp; | &nbsp;
+          <a href="http://markdalgleish.com/projects/stellar.js/" target="_blank">Stellar.js 0.6.2</a>
+          &nbsp; | &nbsp;
+          <a href="http://handlebarsjs.com/" target="_blank">Handlebars.js 1.0.0</a>
+        </div>
+      </div>
+      
+      <div class="container visible-xs" id="footer-content">
+        <div class="text-muted credit">
+          &copy; 2013 <a href="/contact.html">Doug Ilijev</a>
+          |
+          <a href="/credits.html">Credits</a>
+        </div>
+      </div>
+    </div>
+    
+    <script src="/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+  </body>
+</html>
